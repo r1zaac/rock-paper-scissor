@@ -5,7 +5,6 @@
     let score = JSON.parse(localStorage.getItem(('score'))) || {wins:0,losses:0,ties:0};
 
     updateScore();
-    console.log(score)
 
 
 
@@ -16,7 +15,6 @@ function updateScore(){
 
 function playGame (userMove){
     let result = '';
-    console.log('Your Move:',userMove)
 
     const machineMove = pickComputerMove();
     
@@ -68,7 +66,6 @@ function playGame (userMove){
     else if (result === 'Tie'){
         score.ties+=1
     } 
-    console.log('Result:', result)
 
     document.querySelector('.js-moves').innerHTML = `Your move: <img class="move-icon" src="/assets/images/${userMove}-emoji.png">. Computer\'s move: <img class="move-icon" src="/assets/images/${machineMove}-emoji.png">`;
     document.querySelector('.js-result').innerHTML = result;
@@ -94,7 +91,6 @@ function pickComputerMove (){
     }
 
     
-    console.log('Computer\'s Move:',machineMove)
     return machineMove;
     }
 
